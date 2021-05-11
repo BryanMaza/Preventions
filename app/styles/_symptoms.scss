@@ -1,0 +1,109 @@
+.symptoms {
+  background-image: url("../images/background-img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  grid-template-rows: 4rem auto;
+  @include breakpoint-up("small") {
+    padding: 3rem;
+  }
+
+  @include breakpoint-up("large") {
+    grid-template-columns: 0.4fr 0.7fr;
+  }
+  @include breakpoint-up("xlarge") {
+    padding: 3rem 8rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: $blue-dark;
+    grid-column: 1/3;
+    margin-bottom: 2rem;
+    @include selected;
+  }
+
+  .main-img {
+    display: none;
+    transition: $default-transition;
+
+    @include breakpoint-up("small") {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+
+    @include breakpoint-up("large") {
+      max-height: 35rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: 1/3;
+    @include breakpoint-up("small") {
+      grid-column: auto;
+    }
+    @include breakpoint-up("medium") {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 13.25rem);
+    }
+    @include breakpoint-up("large") {
+      grid-template-columns: repeat(3, 0.5fr);
+      grid-template-rows: repeat(2, 16.25rem);
+    }
+
+    .card {
+      margin: 1rem auto;
+      justify-self: start;
+      &__img {
+        width: 6.5rem;
+        height: 6.5rem;
+        transition: $default-transition;
+        @include breakpoint-up("small") {
+          width: 8rem;
+          height: 8rem;
+        }
+        @include breakpoint-up("medium") {
+          width: 10rem;
+          height: 10rem;
+        }
+        @include breakpoint-up("large") {
+          width: 13rem;
+          height: 13rem;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          transition: $default-transition;
+        }
+      }
+      p {
+        text-transform: capitalize;
+        color: $blue;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        @include selected;
+        @include breakpoint-up("medium") {
+          font-size: 1.2rem;
+        }
+        @include breakpoint-up("large") {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

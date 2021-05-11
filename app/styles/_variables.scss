@@ -1,0 +1,16 @@
+$blue: rgb(58, 97, 132);
+$blue-dark: rgb(112, 123, 145);
+$blue-very-dark: rgb(11, 59, 100);
+$blue-light: #cfdbf1;
+$text-gray: rgb(150, 156, 167);
+$gray: rgb(214, 211, 215);
+$default-transition: all 300ms ease-out;
+$white: #ffff;
+$red: red;
+
+@mixin selected {
+  &::selection {
+    background-color: $blue-very-dark;
+    color: $white;
+  }
+}

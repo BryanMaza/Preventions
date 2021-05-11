@@ -1,0 +1,71 @@
+.hero-section {
+  @include breakpoint-up("small") {
+    padding: 1rem 0;
+  }
+  @include breakpoint-up("medium") {
+    padding: 3rem 0;
+  }
+  & > h1 {
+    font-size: 1.4rem;
+    color: $blue-very-dark;
+    transition: all 300ms ease-out;
+    @include selected;
+
+    @include breakpoint-up("small") {
+      font-size: 2.4rem;
+      margin-top: 3rem;
+    }
+    @include breakpoint-up("medium") {
+      font-size: 2.8rem;
+    }
+    @include breakpoint-up("large") {
+      font-size: 3.2rem;
+    }
+  }
+  & > h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: $blue-dark;
+    margin-bottom: 0.3rem;
+    @include selected;
+
+    @include breakpoint-up("small") {
+      font-size: 1.9rem;
+      margin-bottom: 0.7rem;
+    }
+    @include breakpoint-up("medium") {
+      font-size: 2.2rem;
+    }
+    @include breakpoint-up("large") {
+      font-size: 2.2rem;
+    }
+  }
+
+  &__btn {
+    background-color: $blue;
+    color: $blue-light;
+    font-size: 0.75rem;
+    padding: 0.3rem 1.1rem;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    margin-bottom: 3rem;
+    $transition: $default-transition;
+    &:hover {
+      background-color: $blue-very-dark;
+    }
+    @include breakpoint-up("small") {
+      font-size: 1rem;
+    }
+    @include breakpoint-up("medium") {
+      font-size: 1.1rem;
+    }
+  }
+  &__img-container {
+    width: 100%;
+    img {
+      @include breakpoint-up("medium") {
+        width: 100%;
+      }
+    }
+  }
+}

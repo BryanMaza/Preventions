@@ -1,0 +1,45 @@
+.footer {
+  text-align: left;
+  background-image: url("../images/background-img.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  .info {
+    padding: 2rem 1.5rem;
+    @include breakpoint-up("small") {
+      padding: 2rem 3rem;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include breakpoint-up("small") {
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1.5rem;
+    }
+    & > div {
+      margin-bottom: 1.5rem;
+      h3 {
+        color: $blue-dark;
+        @include selected;
+      }
+      p {
+        @include selected;
+        font-size: 0.75rem;
+        color: $blue-dark;
+        font-weight: 400;
+        @include breakpoint-up("small") {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+  .rights {
+    border-top: 1px solid $gray;
+    text-align: center;
+    padding: 1rem;
+    h3 {
+      color: $blue-dark;
+    }
+  }
+}
